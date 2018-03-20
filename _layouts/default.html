@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{ page.title }}
+    </title>
+    <meta name="description" content="Taking traditional mobile telecom technology and making it easy to use for developers">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:600" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    {% if page.showHeroImage %}
+        <link rel="preload" href="/img/hero-img.jpg" as="image">
+    {% endif %}
+    <link rel="preload" href="/img/hero-img.jpg" as="image">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="navbar width-limit">
+            <a class="logo" href="/"><img src="/img/logo.png"></a>
+            <button class="mobile-menu-trigger"><span uk-icon="icon: menu"></span></button>
+            <ul class="nav-menu">
+                <li><a class="nav-link uk-hidden@s" href="/">Home</a></li>
+                <li><a class="nav-link" href="/operators">Operators</a></li>
+                <li><a class="nav-link" href="/news">News</a></li>
+                <li><a class="nav-link" href="/career">Career</a></li>
+                <li><a class="nav-link" href="/about">About us</a></li>
+                <li><a class="nav-link" href="/faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% if page.showHeroImage %}
+    <div class="hero-bg">
+        <div class="hero-content">
+            <img src="/img/hero-logo.png" alt="Working Group Two">
+            <div class="slogan">Enabling modern mobile communication</div>
+        </div>
+    </div>
+    {% endif %}
+    <main class="page-main width-limit">
+        {{ content }}
+    </main>
+    <footer class="page-footer">
+        <script type="text/javascript">
+            document.write("© " + new Date().getFullYear() + " Working Group Two");
+        </script> 
+        | <a href="/contact">Contact</a>
+        | <a href="{{site.repourl}}/blob/master/{{page.path}}">Edit this page</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
